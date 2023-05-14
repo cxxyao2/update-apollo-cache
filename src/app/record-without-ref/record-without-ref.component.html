@@ -1,0 +1,24 @@
+<p>Book List name and genre</p>
+<div>
+  <div *ngFor="let record of allBooks()">
+    <div>{{ record.name }}__{{ record.genre }}</div>
+  </div>
+</div>
+<hr />
+<div>
+  <label for="targetedName">Targeted name:</label>
+  <input
+    id="targetedName"
+    [(ngModel)]="targetName"
+    type="text"
+    placeholder="Harry porter..."
+  />
+  <hr />
+
+  <button (click)="updateCachedRecordWithoutId()">
+    update record in cache
+  </button>
+  <button (click)="removeRecordWithoutIdInLocalCache()">
+    remove record in cache
+  </button>
+</div>

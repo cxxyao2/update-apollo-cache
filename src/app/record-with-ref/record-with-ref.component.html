@@ -1,0 +1,21 @@
+<p>Book List</p>
+<div>
+  <div *ngFor="let record of allBooks()">
+    <div>{{ record.id }}__{{ record.name }}</div>
+  </div>
+</div>
+<hr />
+<div>
+  <label for="targetedId">Targeted Id:</label>
+  <input
+    id="targetedId"
+    [(ngModel)]="targetId"
+    type="text"
+    placeholder="4566..."
+  />
+  <hr />
+  <button (click)="fetchById()">fetchOneBook</button>
+  <button (click)="ReadLocalById()">ReadLocalOneBook</button>
+  <button (click)="writeQueryById3()">update id in cache</button>
+  <button (click)="removeRecordById()">remove id in cache</button>
+</div>
